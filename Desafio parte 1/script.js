@@ -1,33 +1,41 @@
 let numeroAleatorio= Math.floor(Math.random() * 100) + 1;
 let numeroEscolhido = 0;
-let jogadasAnteriores = [];
-let turno = 10 ;
-console.log(numeroAleatorio);
+let turno = 1 ;
 
-document.getElementById("turno").innerHTML = "Tentativas Restantes: " + turno;
+document.getElementById("turno").innerHTML = "Turno: " + turno;
 
-
-function tentativa(){
+function jogo(){
     numeroEscolhido = document.getElementById("palpite").value;
-
-    if (numeroEscolhido < numeroAleatorio){
-        jogadasAnteriores.push(numeroEscolhido);
-        turno--
-        alert("você errou, seu numero é menor que o correto")
-    } else if (numeroEscolhido > numeroAleatorio){ 
-        jogadasAnteriores.push(numeroEscolhido);
-        alert("você errou, seu numero é maior que o correto")
-        turno--
+    
+    if (turno <= 10) {
+        if (numeroEscolhido < numeroAleatorio){
+            jogadaErrada("menor");
+        } else if (numeroEscolhido > numeroAleatorio){ 
+            jogadaErrada("maior");
+        } else {
+            alert("Parabéns você acertou !!!");
+            document.getElementById("botao").disabled = true; 
+            document.getElementById("msgFimDeJogo").innerHTML = "RECARREGUE A PAGINA PARA JOGAR NOVAMENTE";
+        }     
     } else {
-        alert("Parabéns você acertou !!!")
-     }
+        fimDeJogo();
+    }
 
-    document.getElementById("turno").innerHTML = "Tentativas Restantes: " + turno;
+    turno <= 10 ? document.getElementById("turno").innerHTML = "Turno: " + turno : "" ;
+
 }
 
 function fimDeJogo() {
-    if(turno == 0){
-        alert("Você PERDEU :( - Acabou o numero de tentativas");
-        document.getElementById("botao").disabled = true;       
-    }
+    alert("Você PERDEU :( - Acabou o numero de tentativas");
+    document.getElementById("botao").disabled = true; 
+    document.getElementById("msgFimDeJogo").innerHTML = "RECARREGUE A PAGINA PARA JOGAR NOVAMENTE";      
+}
+
+function jogadaErrada(position){
+    turno++;
+    let jogadaErrada = document.getElementById("tentativasAnteriores");
+    let texto = document.createTextNode(numeroEscolhido + " ");
+    jogadaErrada.appendChild(texto);
+    alert("você errou, seu numero é " + position + " que o correto");
+
 }
