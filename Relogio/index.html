@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+</head>
+<body>
+    <p class="displayHours"></p>
+    <p class="displayMinutes"></p>
+    <p class="displaySeconds"></p>
+    <script>
+
+        var displayHours = document.getElementById('displayHours');
+        var displayMinutes = document.getElementById('displayMinutes');
+        var displaySeconds = document.getElementById('displaySeconds');
+
+        let currentTime = new Date();
+
+        displayHours.innerHTML = currentTime.getHours() + " hrs";
+        displayMinutes.innerHTML = currentTime.getMinutes() + " min";
+        displaySeconds.innerHTML = currentTime.getSeconds() + " sec";
+
+        setTimeout(() => {
+            currentTime = new Date();
+            }
+            , 1000);
+    </script>
+    
+</body>
+</html>
