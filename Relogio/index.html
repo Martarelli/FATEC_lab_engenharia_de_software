@@ -7,23 +7,24 @@
     <title>Relógio</title>
 </head>
 <body>
+
     <p class="displayHours"></p>
     <p class="displayMinutes"></p>
     <p class="displaySeconds"></p>
+    
     <script>
 
-        var displayHours = document.getElementById('displayHours');
-        var displayMinutes = document.getElementById('displayMinutes');
-        var displaySeconds = document.getElementById('displaySeconds');
+        var displayHours = document.getElementsByClassName('displayHours');
+        var displayMinutes = document.getElementsByClassName('displayMinutes');
+        var displaySeconds = document.getElementsByClassName('displaySeconds');
 
         let currentTime = new Date();
 
-        displayHours.innerHTML = currentTime.getHours() + " hrs";
-        displayMinutes.innerHTML = currentTime.getMinutes() + " min";
-        displaySeconds.innerHTML = currentTime.getSeconds() + " sec";
-
-        setTimeout(() => {
-            currentTime = new Date();
+        setInterval(() => {      
+            currentTime = new Date();    
+            document.querySelector(".displayHours").innerHTML = currentTime.getHours() + " hrs";
+            document.querySelector(".displayMinutes").innerHTML  = currentTime.getMinutes() + " min";
+            document.querySelector(".displaySeconds").innerHTML = currentTime.getSeconds() + " sec";  
             }
             , 1000);
     </script>
