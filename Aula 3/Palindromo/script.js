@@ -12,5 +12,4 @@ function palindromo(){
     }
     console.log(word);
     console.log(isPalindrome);
-    
 }
