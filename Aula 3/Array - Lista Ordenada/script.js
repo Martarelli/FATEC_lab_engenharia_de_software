@@ -17,6 +17,4 @@ function arrayOrganization(){
         e.setAttribute("class", "arrayItem");
         document.querySelector("ol").appendChild(e);
     }
-
-    console.log(userArray)
 }
