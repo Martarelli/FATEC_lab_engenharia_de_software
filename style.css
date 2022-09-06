@@ -45,7 +45,12 @@ body{
     justify-content: center;
 }
 
-.github > a > img {
+.github > picture {
     width: 5rem;
     height: 5rem;
+}
+
+.github > picture > img {
+    max-width:100%;
+    max-height:100%;
 }
