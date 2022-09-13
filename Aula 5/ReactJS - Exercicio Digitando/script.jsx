@@ -1,6 +1,6 @@
 let fatec = "Venha estudar na Fatec";
 let i = 0;
-let letreiro = []
+let letreiro = [];
 
 function tick () {
     if(i <= fatec.length){
