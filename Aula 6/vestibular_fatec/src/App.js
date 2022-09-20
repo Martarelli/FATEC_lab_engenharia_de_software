@@ -1,6 +1,5 @@
 import './App.css';
 import logo from './logo-governo-estado-de-sao-paulo-footer-2.png';
-import inscricao from './inscricao.png';
 
 function App() {
   return (
