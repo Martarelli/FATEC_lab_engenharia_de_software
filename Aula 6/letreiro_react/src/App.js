@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+
+let fatec = "Venha estudar na Fatec";
+let i = 0;
+let letreiro = [];
+let letreiroExibicao = ""
 
 function App() {
+  useEffect(() => {
+    setInterval(() => {
+      if (i <= fatec.length - 1) {
+        let letter = fatec[i];
+        letreiro.push(letter);
+        letreiroExibicao = letreiro.join("");
+        i++;
+        console.log(letreiroExibicao)
+      } else {
+        letreiro = [];
+        i = 0;
+      }
+    }, 1000);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="letreiro">Letreiro</h1>
+      <p className="exibicao">{letreiroExibicao}</p>
     </div>
   );
 }
