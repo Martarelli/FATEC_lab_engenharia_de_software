@@ -1,24 +1,26 @@
-const fatec = "Venha estudar na Fatec";
-let i = 0;
-let letreiro = [];
-let letreiroExibicao = ""
+import { useState } from "react";
 
-const exibir = () => {
-    if (i <= fatec.length - 1) {
-      let letter = fatec[i];
-      letreiro.push(letter);
-      letreiroExibicao = letreiro.join("");
-      i++;
-      console.log(letreiroExibicao)
-    } else {
-      letreiro = [];
-      i = 0;
-    }
+function Letreiro() {
+  const [letreiro, setLetreiro] = useState("");
+  const fatec = "Venha estudar na Fatec";
+  let i = 0;
+  const exibir = () => {
+    for (i of fatec) {
+      let letter = i;
+      setLetreiro(letter);
+      console.log(i);
+      if(letreiro === fatec){
+        this.setLetreiro = "";
+        i = 0;
+      }
+    } 
+  };
+  return (
+    <div>
+      <p>{letreiro}</p>
+      <button onClick={() => exibir()}> Click me</button>
+    </div>
+  );
 }
 
-
-function Letreiro(){
-    return <p>{letreiroExibicao} TESTE</p>
-  }
-
-  export default Letreiro;
+export default Letreiro;
