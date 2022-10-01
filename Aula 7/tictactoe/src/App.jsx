@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import Square from './Components/Square';
 
+import { Patters } from './Patters';
+
 function App() {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("O")
