@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+
+let n = parseInt(prompt("Digite um número: "))
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Tabuada do {n}</h1>
+      <h3> 1 x {n} = {1 * n}</h3>
+      <h3> 2 x {n} = {2 * n}</h3>
+      <h3> 3 x {n} = {3 * n}</h3>
+      <h3> 4 x {n} = {4 * n}</h3>
+      <h3> 5 x {n} = {5 * n}</h3>
+      <h3> 6 x {n} = {6 * n}</h3>
+      <h3> 7 x {n} = {7 * n}</h3>
+      <h3> 8 x {n} = {8 * n}</h3>
+      <h3> 9 x {n} = {9 * n}</h3>
+      <h3> 10 x {n} = {10 * n}</h3>
+      
     </div>
   );
 }
