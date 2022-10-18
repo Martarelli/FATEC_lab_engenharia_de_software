@@ -9,7 +9,7 @@ let n = parseInt(prompt("Digite um número: "));
 function App() {
   return (
     <div className="App">
-      <Titulo/>
+      <Titulo texto="TITULO UTILIZANDO COMPONENTE DE CLASSE"/>
       <Titulo2/>
       <Tabuada numero={n}/>  
     </div>

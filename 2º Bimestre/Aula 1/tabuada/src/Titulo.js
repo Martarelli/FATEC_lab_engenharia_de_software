@@ -2,7 +2,7 @@ import React from "react";
 
 class Titulo extends React.Component {
     render(){
-      return <h2>Componente titulo com CLASSE</h2>
+      return <h2>{this.props.texto}</h2>
     }
   }
 
