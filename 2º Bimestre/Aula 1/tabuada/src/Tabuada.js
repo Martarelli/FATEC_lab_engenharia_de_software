@@ -1,8 +1,7 @@
 import React from 'react';
 
-let n = parseInt(prompt("Digite um número: "))
-
-function Tabuada() {
+function Tabuada(props) {
+    let n = parseInt(props.numero)
   return (
     <div className="App">
       <h1>Tabuada do {n}</h1>

@@ -4,12 +4,14 @@ import Titulo from './Titulo';
 import Titulo2 from './Titulo2';
 import Tabuada from './Tabuada';
 
+let n = parseInt(prompt("Digite um número: "));
+
 function App() {
   return (
     <div className="App">
       <Titulo/>
       <Titulo2/>
-      <Tabuada/>  
+      <Tabuada numero={n}/>  
     </div>
   );
 }
