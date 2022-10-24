@@ -4,12 +4,14 @@ import Titulo from './Titulo';
 import Titulo2 from './Titulo2';
 import Tabuada from './Tabuada';
 import Cores from './Cores'
+import Mensagem from './Mensagem'
 
 let n = parseInt(prompt("Digite um número: "));
 
 function App() {
   return (
     <div className="App">
+      <Mensagem />
       <Cores />
       <Titulo 
             titulo= "FATEC"
