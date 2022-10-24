@@ -6,12 +6,14 @@ import Tabuada from './Tabuada';
 import Cores from './Cores'
 import Mensagem from './Mensagem'
 import Header from './Header'
+import Container from './Container'
 
 let n = parseInt(prompt("Digite um número: "));
 
 function App() {
   return (
     <div className="App">
+      <Container />
       <Header />
       <Mensagem />
       <Cores />
