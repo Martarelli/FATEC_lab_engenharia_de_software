@@ -9,19 +9,19 @@ class Header extends React.Component{
         };
     }
 
-    static getDerivedStateFromProps(){
-        this.setState({color: "orange", ciclo: "getDerivedStateFromProps"})
-    }
+    // static getDerivedStateFromProps(props,state){
+    //     return {color: "orange", ciclo: "getDerivedStateFromProps"};
+    // }
 
     componentDidMount(){
         setTimeout(() => {
             this.setState({color: "blue", ciclo: "componentDidMount"})
-        }, 1000);
+        }, 5000);
     }
 
     render(){
         return (
-            <h1>A cor selecionada no state é: <b>{this.state.color}</b> no ciclo <b>{this.state.ciclo}</b></h1>
+            <h1>A cor selecionada no state é: {this.state.color} no ciclo {this.state.ciclo}</h1>
         )
     }
 }
