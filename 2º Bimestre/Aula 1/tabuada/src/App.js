@@ -5,12 +5,14 @@ import Titulo2 from './Titulo2';
 import Tabuada from './Tabuada';
 import Cores from './Cores'
 import Mensagem from './Mensagem'
+import Header from './Header'
 
 let n = parseInt(prompt("Digite um número: "));
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Mensagem />
       <Cores />
       <Titulo 
