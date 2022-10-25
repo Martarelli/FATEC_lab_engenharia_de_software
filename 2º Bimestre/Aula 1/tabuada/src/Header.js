@@ -19,6 +19,22 @@ class Header extends React.Component{
         }, 5000);
     }
 
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        alert("getSnapshotBeforeUpdate EXECUTADO antes da atualização do componente");
+        if(prevState.color !== this.state.color){
+            alert("Os State foram alterados");
+            console.log("Antes: ",prevState.color);
+            console.log("Depois: ",this.state.color);
+            return this.state.color;
+        }
+        return null;
+    }
+
+    componentDidUpdate(snapshot){
+        alert("componentDidUpdate EXECUTADO após atualização do componente");
+
+    }
+
     render(){
         return (
             <h1>A cor selecionada no state é: {this.state.color} no ciclo {this.state.ciclo}</h1>
