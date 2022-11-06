@@ -7,12 +7,14 @@ import Cores from './Cores'
 import Mensagem from './Mensagem'
 import Header from './Header'
 import Container from './Container'
+import Contador from './Contador'
 
 let n = parseInt(prompt("Digite um número: "));
 
 function App() {
   return (
     <div className="App">
+      <Contador />
       <Container />
       <Header />
       <Mensagem />
