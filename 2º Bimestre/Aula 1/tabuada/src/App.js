@@ -8,12 +8,14 @@ import Mensagem from './Mensagem'
 import Header from './Header'
 import Container from './Container'
 import Contador from './Contador'
+import TodoList from './TodoList';
 
 let n = parseInt(prompt("Digite um número: "));
 
 function App() {
   return (
     <div className="App">
+      <TodoList />
       <Contador />
       <Container />
       <Header />
