@@ -43,6 +43,11 @@ body{
   justify-content: center;
   align-items: center;
   border-radius: 60px;
+
+  color: #f0f0f0;
+  font-size: 1.5rem;
+
+  font-weight: 400;
 }
 
 .button-light{
@@ -70,11 +75,11 @@ body{
   display: flex;
   justify-content: right;
   align-items: center;
+
   color: #f0f0f0;
-
-
+  font-size: 3rem;
   font-weight: 400;
 
   padding: 10px 40px 10px 0;
-  font-size: 3rem;
+  
 }
