@@ -1,12 +1,13 @@
-import React from 'react';
 import './App.css';
+
+import React from 'react';
+
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       n1: 0,
       n2: 0,
-      display: 0,
       operation: false,
       operationType: ""
     }
@@ -46,51 +47,92 @@ class App extends React.Component{
         this.setState({
         operation: true,
         operationType: e.target.value,
-        display: 0
         });
     } else if (e.target.value === "/") {
       this.setState({
         operation: true,
         operationType: e.target.value,
-        display: 0
         });
     } else if (e.target.value === "-") {
       this.setState({
         operation: true,
         operationType: e.target.value,
-        display: 0
         });
     } else if (e.target.value === "+") {
       this.setState({
         operation: true,
         operationType: e.target.value,
-        display: 0
         });
+    } else if (e.target.value === "+/-") {
+      if (!this.state.operation){
+        this.setState({
+          n1: this.state.n1 * (-1)
+          });
+      } else {
+        this.setState({
+          n2: this.state.n2 * (-1)
+          });
+      }
     }
   }
+
 
   clear = () => {
     this.setState({
       n1: 0,
       n2: 0,
-      display: 0,
       operation: false,
       operationType: ""
     });
   }
 
-
+  submitCalc = (e) => {
+    if (e.target.value === "%"){
+      let result = parseFloat(this.state.n1) * (parseFloat(this.state.n2) / 100)
+      this.setState({
+        operation: false,
+        n1: result,
+        n2: 0
+      });
+    } else {
+      if (this.state.operationType === "x") {
+        this.setState({
+          operation: false,
+          n1: parseFloat(this.state.n1)  * parseFloat(this.state.n2),
+          n2: 0
+        });
+      } else if (this.state.operationType === "/") {
+        this.setState({
+          operation: false,
+          n1: parseFloat(this.state.n1) / parseFloat(this.state.n2),
+          n2: 0
+        });
+      } else if (this.state.operationType === "-") {
+      this.setState({
+        operation: false,
+        n1: parseFloat(this.state.n1) - parseFloat(this.state.n2),
+        n2: 0
+        });
+      } else if (this.state.operationType === "+") {
+      this.setState({
+        operation: false,
+        n1: parseFloat(this.state.n1) + parseFloat(this.state.n2),
+        n2: 0
+        });
+      }
+    }
+  }
 
   render() {
     return (
       <div className = 'app'>
         <div className ='row-display'>
-          <div className='display'>{this.state.n1}</div>
+          <div className='display'>{this.state.operation ? parseFloat(this.state.n2) : parseFloat(this.state.n1)}</div>
         </div>
         <div className ='rows'>
           <button className='button button-light' onClick={this.clear}>AC</button>
           <button className='button button-light' onClick={this.action} value={"+/-"}>+/-</button>
-          <button className='button button-light' onClick={this.gettingData} value={"%"}>%</button>
+          <button className='button button-light' onClick={this.submitCalc} value={"%"}>%</button>
           <button className='button button-operation' onClick={this.action} value={"/"}>/</button>
         </div>
         <div className ='rows'>
@@ -112,9 +154,9 @@ class App extends React.Component{
           <button className='button button-operation' onClick={this.action} value={"+"}>+</button>
         </div>
         <div className ='rows'>
-          <button className='button button-large'>0</button>
-          <button className='button'>,</button>
-          <button className='button button-operation'>=</button>
+          <button className='button button-large' onClick={this.gettingData} value={0}>0</button>
+          <button className='button' onClick={this.gettingData} value={"."}>,</button>
+          <button className='button button-operation' onClick={this.submitCalc}>=</button>
         </div>
       </div>
   
